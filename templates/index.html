@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictive Analysis Form</title>
+</head>
+
+<body>
+
+    <div style="color:blue">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Predictive analysis</h2>
+
+            <h3>Gender</h3>
+            <select name="gender" id="gender" required="required">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <h3>Age</h3>
+            <input id="age" name="age" type="number">
+
+            <h3>Hypertension</h3>
+            <input id="hypertension" name="hypertension" type="number">
+
+            <h3>Heart Disease</h3>
+            <input id="heart_disease" name="heart_disease" type="number">
+
+            <h3>Marital Status</h3>
+            <select name="ever_married" id="ever_married" required="required">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+
+            <h3>Work Type</h3>
+            <select name="work_type" id="work_type" required="required">
+                <option value="children">Children</option>
+                <option value="Govt_jov">Govt Job</option>
+                <option value="Never_worked">Never Worked</option>
+                <option value="Private">Private</option>
+                <option value="Self-employed">Self-employed</option>
+            </select>
+
+            <h3>Residence Type</h3>
+            <select name="residence_type" id="residence_type" required="required">
+                <option value="Rural">Rural</option>
+                <option value="Urban">Urban</option>
+            </select>
+
+            <h3>Average Glucose Level</h3>
+            <input id="avg_glucose_level" name="avg_glucose_level" type="number">
+
+            <h3>Body Mass Index (BMI)</h3>
+            <input id="bmi" name="bmi" type="number">
+
+            <h3>Smoking Status</h3>
+            <select name="smoking_status" id="smoking_status" required="required">
+                <option value="formerly_smoked">Formerly Smoked</option>
+                <option value="never_smoked">Never Smoked</option>
+                <option value="smokes">Smokes</option>
+                <option value="Unknown">Unknown</option>
+            </select>
+
+            <br><br>
+            <button id="sub" type="submit">Calculate</button>
+            <br>
+
+        </form>
+
+        <br><br>
+        <h3>{{ prediction_text }}</h3>
+    </div>
+
+    <style>
+        /* Your existing styles remain unchanged */
+    </style>
+
+</body>
+
+</html>
